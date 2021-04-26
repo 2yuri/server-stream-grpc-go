@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "/pb";
+
+message Response {
+    bytes fileChunk = 1;
+    int32 proccess = 2;
+    int32 total = 3;
+}
+message Request {
+    string fileName = 1;
+}
+
+service TestService {
+    rpc Download(Request) returns (stream Response);
+}
