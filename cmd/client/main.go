@@ -70,7 +70,7 @@ func main() {
 			log.Println("received all chunks")
 
 			log.Println("creating file with chunks receive")
-			ioutil.WriteFile(request.FileName, b.Bytes(), 0755|os.ModeAppend)
+			ioutil.WriteFile("new_"+request.FileName, b.Bytes(), 0755|os.ModeAppend)
 			log.Println("created")
 
 			break
